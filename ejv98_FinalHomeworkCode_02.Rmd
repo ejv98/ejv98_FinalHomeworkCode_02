@@ -1,0 +1,118 @@
+---
+title: "ejv98_FinalHomeworkCode_02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+---
+title: "mrubiog2000_PeerCommentary_ejv98"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#Problem 1
+
+```{r}
+l<-15
+l
+# [1]15
+x<-1:8
+x
+# [1] 1 2 3 4 5 6 7 8
+ppois(8,1,lower.tail=FALSE)
+# [1] 1.125203e-06
+
+```
+
+#Problem 2
+
+```{r}
+dpois(x=0,lambda=l) 
+# [1] 3.059023e-07
+```
+
+#Problem 3
+
+```{r}
+dpois(x=3,lambda=l)
+# [1] 0.0001720701
+```
+
+#Problem 4
+
+```{r}
+x<-c(0:30)
+y<-dpois(x=x,lambda=l)
+barplot(y,names.arg=x,space=0,xlab="Calls",ylab="Pr(x=Calls)",main="Probability of Mass Function")
+```
+
+#Problem 5
+
+```{r}
+rpois(n=104,lambda=l)
+```
+
+#Problem 6
+
+```{r}
+r<-rpois(104,l)
+r
+ #  [1] 18 14 20 17 16 10 13 12 18 12 16 13 12 13  9 16 18 17 12 16 15 20 13 15 11 21 21 10 21 21 11 11 21 20 14 14
+ # [37] 21 15 14 17 17 11 12  9 15 15 16 13 16 15 15 16 19 15  9 18  9  9 17 21 12 14 11 15 13 19 17 10 15 12 10 16
+ # [73] 11 14 15 16 15 15 11 13 14  9 12 21 20 16 14 13 15 16 15 17 11 15 19  9 23 19 13  8 24 19 24 14
+hist(r,breaks=seq(from=0,to=30,by=1),probability=TRUE,main="Plot of Simulated Results",xlab="Calls",ylab="Pr(x=Calls)",xlim=c(0,30))
+```
+
+#CHALLENGES
+
+Problem 1: I had an issue at first tyring to figure out how to figure out the probability of getting more than 8 calls. I couldn't figure out how to properly type it out. I ended up searching on google how to write this command in R. 
+
+Problem 2: In general, I had issues making the plots. I think the issue I had was that I was typing everything out manually rather than copy and pasting, and I kept running into errors. Eventually, I figured out what was wrong, it usually ended up being a matter of forgetting a parentheses or quotation mark. 
+
+Probelm 3: 
